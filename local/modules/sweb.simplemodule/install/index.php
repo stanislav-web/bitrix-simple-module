@@ -2,7 +2,7 @@
 // Подключаю translate
 IncludeModuleLangFile(__FILE__);
 
-class sweb_simplemodule extends CModule {
+Class sweb_simplemodule extends CModule {
     
     /**
      * $MODULE_ID
@@ -14,67 +14,67 @@ class sweb_simplemodule extends CModule {
      * $DB Идентификатор соединения с БД
      * @var resource
      */
-    public $DB                      =   null;
+    var $DB                      =   null;
     
     /**
      * $APPLICATION
      * @var object
      */
-    public $APPLICATION             =   null;
+    var $APPLICATION             =   null;
     
     /**
      * $USER
      * @var object
      */
-    public $USER             =   null;
+    var $USER             =   null;
 
     /**
      * $MODULE_VERSION
      * @var string Версия модуля 
      */    
-    public $MODULE_VERSION         =   null;
+    var $MODULE_VERSION         =   null;
     
     /**
      * $MODULE_VERSION_DATE
      * @var date Дата создания модуля
      */    
-    public  $MODULE_VERSION_DATE    =   null;
+    var  $MODULE_VERSION_DATE    =   null;
     
     /**
      * $MODULE_NAME
      * @var string Название модуля
      */    
-    public  $MODULE_NAME            =   null;
+    var  $MODULE_NAME            =   null;
     
     /**
      * $MODULE_DESCRIPTION
      * @var string Описание модуля
      */    
-    public  $MODULE_DESCRIPTION     =   null;
+    var  $MODULE_DESCRIPTION     =   null;
     
     /**
      * $MODULE_ID
      * @var string ID модуля (директория) 
      */    
-    public  $MODULE_CSS             =   null;
+    var  $MODULE_CSS             =   null;
     
     /**
      * $PARTNER_NAME
      * @var string Имя партнера в Merketplace
      */    
-    public  $PARTNER_NAME           =   null;
+    var  $PARTNER_NAME           =   null;
     
     /**
      * $PARTNER_URI
      * @var string URL персональная страница партнера
      */    
-    public $PARTNER_URI            =   null;
+    var $PARTNER_URI            =   null;
     
     /**
      * $errors контейнер шибками
      * @var $errors              
      */
-    public $errors                  = false;
+    var $errors                  = false;
     
     /**
      * Конструктор, по умолчанию присваиваю настройки
@@ -194,7 +194,7 @@ class sweb_simplemodule extends CModule {
      * @access public
      * @return boolean
      */
-    public function InstallDB()
+    function InstallDB()
     {
         $this->errors = false;
         
@@ -226,7 +226,7 @@ class sweb_simplemodule extends CModule {
      * @access public
      * @return boolean
      */
-    private function UnInstallDB()
+    function UnInstallDB()
     {
         $this->errors = false;
         $this->errors = $this->DB->RunSQLBatch($_SERVER["DOCUMENT_ROOT"]."/local/modules/sweb.simplemodule/install/db/".strtolower($this->DB->type)."/uninstall.sql");    
